@@ -1,10 +1,21 @@
-OBJETOS = int3.o
+Int3 = int3.c
+LOGIN = interfaz_login.c
+BUSQUEDA = interfaz_busqueda.c
 CFLAGS = `pkg-config --libs --cflags gtk+-2.0`
+CC = gcc
 
-all:  compilar
+.PHONY: all limpiar
 
-compilar: ${OBJETOS}
-	${CC} -o int3 ${OBJETOS} ${CFLAGS}
+all:  int3 login busquedas
+
+int3: ${Int3}
+	${CC} -o int3 ${int3} ${CFLAGS}
+
+login: ${LOGIN}
+	${CC} -o I_login ${LOGIN} ${CFLAGS}
+
+busquedas:${BUSQUEDA}
+	${CC} -o I_busqueda ${BUSQUEDA} ${CFLAGS}
 
 limpiar: ${OBJETOS}
 	rm -f int3 ${OBJETOS}
