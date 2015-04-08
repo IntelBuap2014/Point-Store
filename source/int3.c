@@ -64,8 +64,7 @@ int main(int argc, char *argv[]) {
   gtk_table_attach(GTK_TABLE(table), lblNombre, 0, 1, 1, 2, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
   gtk_table_attach(GTK_TABLE(table), lblMarca,  0, 1, 2, 3, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
   gtk_table_attach(GTK_TABLE(table), lblDescr,  0, 1, 3, 4, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-
-  pd->EtCodBar = gtk_entry_new_with_max_length(15);
+  gtk_entry_set_max_length( pd->EtCodBar, 15);
   pd->EtNombre = gtk_entry_new();
   pd->EtMarca = gtk_entry_new();
   pd->EtDescr = gtk_entry_new();

@@ -1,5 +1,5 @@
 OBJETOS = int3.o
-CFLAGS = `pkg-config --libs --cflags gtk+-2.0`
+CFLAGS = `pkg-config --libs --cflags gtk+-3.0`
 
 all:  compilar
 
