@@ -1,19 +1,45 @@
+#include <stdio.h>
 #include <gtk/gtk.h>
+
+typedef struct produc_data{
+    GtkWidget *EtNombre;
+    GtkWidget *EtMarca;
+    GtkWidget *EtDescr;
+    GtkWidget *EtCodBar;
+} produc_data;
+
+static gboolean callback(GtkWidget *widget, gpointer data){
+  produc_data* pd = (produc_data*)data;
+
+  const gchar *Nombre, 
+              *Codigo, 
+              *Marca, 
+              *Descripcion;
+
+  Codigo = gtk_entry_get_text(GTK_ENTRY(pd->EtCodBar));
+  Nombre = gtk_entry_get_text(GTK_ENTRY(pd->EtNombre));
+  Marca = gtk_entry_get_text(GTK_ENTRY(pd->EtMarca));
+  Descripcion = gtk_entry_get_text(GTK_ENTRY(pd->EtDescr));
+  
+  g_print("Se escribio el producto con codigo %s , de nombre %s de la marca %s %s \n", Codigo, Nombre, Marca, Descripcion);
+
+}
 
 int main(int argc, char *argv[]) {
 
   GtkWidget *window;
   GtkWidget *table;
+
   GtkWidget *lblNombre;
   GtkWidget *lblMarca;
   GtkWidget *lblDescr;
   GtkWidget *lblCodBar;
-  GtkWidget *EtNombre;
-  GtkWidget *EtMarca;
-  GtkWidget *EtDescr;
-  GtkWidget *EtCodBar;
+
   GtkWidget *btnReg;
+  GtkWidget *btnCerrar;
   GtkWidget *frame;
+
+  produc_data* pd = g_malloc(sizeof(*pd));
 
   gtk_init(&argc, &argv);
 
@@ -25,7 +51,7 @@ int main(int argc, char *argv[]) {
   frame = gtk_frame_new("Información del producto");
   gtk_frame_set_shadow_type(GTK_FRAME(frame), GTK_SHADOW_ETCHED_IN);
 
-  table = gtk_table_new(5, 2, FALSE);
+  table = gtk_table_new(6, 2, FALSE);
   gtk_container_add(GTK_CONTAINER(window), table);
 
   lblNombre = gtk_label_new("Nombre: ");
@@ -33,37 +59,42 @@ int main(int argc, char *argv[]) {
   lblDescr = gtk_label_new("Descripcion del Producto: ");
   lblCodBar = gtk_label_new("Codigo de Barras: ");
 
+
   gtk_table_attach(GTK_TABLE(table), lblCodBar, 0, 1, 0, 1, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
   gtk_table_attach(GTK_TABLE(table), lblNombre, 0, 1, 1, 2, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
   gtk_table_attach(GTK_TABLE(table), lblMarca,  0, 1, 2, 3, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
   gtk_table_attach(GTK_TABLE(table), lblDescr,  0, 1, 3, 4, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
 
-  EtCodBar = gtk_entry_new();
-  EtNombre = gtk_entry_new();
-  EtMarca = gtk_entry_new();
-  EtDescr = gtk_entry_new();
+  pd->EtCodBar = gtk_entry_new_with_max_length(15);
+  pd->EtNombre = gtk_entry_new();
+  pd->EtMarca = gtk_entry_new();
+  pd->EtDescr = gtk_entry_new();
 
-  gtk_table_attach(GTK_TABLE(table), EtCodBar, 1, 2, 0, 1, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-  gtk_table_attach(GTK_TABLE(table), EtNombre, 1, 2, 1, 2, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-  gtk_table_attach(GTK_TABLE(table), EtMarca, 1, 2, 2, 3, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-  gtk_table_attach(GTK_TABLE(table), EtDescr, 1, 2, 3, 4, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
+  gtk_table_attach(GTK_TABLE(table), pd->EtCodBar, 1, 2, 0, 1, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
+  gtk_table_attach(GTK_TABLE(table), pd->EtNombre, 1, 2, 1, 2, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
+  gtk_table_attach(GTK_TABLE(table), pd->EtMarca, 1, 2, 2, 3, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
+  gtk_table_attach(GTK_TABLE(table), pd->EtDescr, 1, 2, 3, 4, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
 
   btnReg = gtk_button_new_with_label("Registrar");
-  g_signal_connect(G_OBJECT(btnReg), "clicked",G_CALLBACK(gtk_main_quit), G_OBJECT(window)); // Cambiara a posteriori para enviar resultados a BD
+  btnCerrar = gtk_button_new_with_label("Cerrar");
+
+  g_signal_connect(btnReg,"clicked",G_CALLBACK(callback),(gpointer)pd);
+  g_signal_connect(G_OBJECT(btnCerrar), "clicked",G_CALLBACK(gtk_main_quit), G_OBJECT(window));
 
   gtk_table_attach(GTK_TABLE(table), btnReg, 1, 2, 4, 5, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
+  gtk_table_attach(GTK_TABLE(table), btnCerrar, 1, 2, 5, 6, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
 
   gtk_widget_show(table);
-
   gtk_widget_show(lblCodBar);
   gtk_widget_show(lblNombre);
   gtk_widget_show(lblMarca);
   gtk_widget_show(lblDescr);
-  gtk_widget_show(EtCodBar);
-  gtk_widget_show(EtNombre);
-  gtk_widget_show(EtMarca);
-  gtk_widget_show(EtDescr);
+  gtk_widget_show(pd->EtCodBar);
+  gtk_widget_show(pd->EtNombre);
+  gtk_widget_show(pd->EtMarca);
+  gtk_widget_show(pd->EtDescr);
   gtk_widget_show(btnReg);
+  gtk_widget_show(btnCerrar);
   gtk_widget_show(window);
 
   g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
