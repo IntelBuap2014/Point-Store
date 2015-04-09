@@ -1,7 +1,7 @@
 #<<<<<<< HEAD
 Int3 = int3.c
 LOGIN = interfaz_login.c
-BUSQUEDA = interfaz_busqueda.c
+BUSQUEDA = interfaz_search.c
 CFLAGS = `pkg-config --libs --cflags gtk+-2.0`
 CC = gcc
 #=======
@@ -14,7 +14,7 @@ CFLAGS = `pkg-config --libs --cflags gtk+-3.0`
 all:  int3 login busquedas
 
 int3: ${Int3}
-	${CC} -o int3 ${int3} ${CFLAGS}
+	${CC} -o int3 ${Int3} ${CFLAGS}
 
 login: ${LOGIN}
 	${CC} -o I_login ${LOGIN} ${CFLAGS}
