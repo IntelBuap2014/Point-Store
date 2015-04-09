@@ -10,7 +10,10 @@ CC = gcc
 DIRBIN = ../bin
 .PHONY: all limpiar int3
 
-all:  int3 login busquedas interfaz_2 interfazx
+all:  creacion_directorios int3 login busquedas interfaz_2 interfazx
+
+creacion_directorios:
+	mkdir ../bin
 
 int3: ${Int3}
 	${CC} -o ${DIRBIN}/int3 ${Int3} ${CFLAGS}
@@ -28,4 +31,4 @@ interfazx: ${INTERFAZX}
 	${CC} -o ${DIRBIN}/interfazX ${INTERFAZX} ${CFLAGS}
 
 limpiar:
-	rm -f ${DIRBIN}/*
+	rm -rf ${DIRBIN}/
