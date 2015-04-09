@@ -1,34 +1,31 @@
-#<<<<<<< HEAD
+
 Int3 = int3.c
 LOGIN = interfaz_login.c
 BUSQUEDA = interfaz_search.c
 INTERFAZ_2 = Interfaz_2.c
 INTERFAZX = interfazX.c
 CFLAGS = `pkg-config --libs --cflags gtk+-2.0`
+CFLAGS2 = `pkg-config --libs --cflags gtk+-3.0`
 CC = gcc
-#=======
-OBJETOS = int3.o
-CFLAGS = `pkg-config --libs --cflags gtk+-3.0`
-#>>>>>>> refs/remotes/origin/master
-
-.PHONY: all limpiar
+DIRBIN = ../bin
+.PHONY: all limpiar int3
 
 all:  int3 login busquedas interfaz_2 interfazx
 
 int3: ${Int3}
-	${CC} -o int3 ${Int3} ${CFLAGS}
+	${CC} -o ${DIRBIN}/int3 ${Int3} ${CFLAGS}
 
 login: ${LOGIN}
-	${CC} -o I_login ${LOGIN} ${CFLAGS}
+	${CC} -o ${DIRBIN}/I_login ${LOGIN} ${CFLAGS}
 
 busquedas:${BUSQUEDA}
-	${CC} -o I_busqueda ${BUSQUEDA} ${CFLAGS}
+	${CC} -o ${DIRBIN}/I_busqueda ${BUSQUEDA} ${CFLAGS}
 
 interfaz_2: ${INTERFAZ_2}
-	${CC} -o Interfaz_2 ${INTERFAZ_2} ${CFLAGS}
-	
-interfazx: ${INTERFAZX}
-	${CC} -o interfazX ${INTERFAZX} ${CFLAGS}
+	${CC} -o ${DIRBIN}/Interfaz_2 ${INTERFAZ_2} ${CFLAGS2}
 
-limpiar: ${OBJETOS}
-	rm -f int3 ${OBJETOS}
+interfazx: ${INTERFAZX}
+	${CC} -o ${DIRBIN}/interfazX ${INTERFAZX} ${CFLAGS}
+
+limpiar:
+	rm -f ${DIRBIN}/*
