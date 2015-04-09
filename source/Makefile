@@ -3,6 +3,7 @@ Int3 = int3.c
 LOGIN = interfaz_login.c
 BUSQUEDA = interfaz_search.c
 INTERFAZ_2 = Interfaz_2.c
+INTERFAZX = interfazX.c
 CFLAGS = `pkg-config --libs --cflags gtk+-2.0`
 CC = gcc
 #=======
@@ -12,7 +13,7 @@ CFLAGS = `pkg-config --libs --cflags gtk+-3.0`
 
 .PHONY: all limpiar
 
-all:  int3 login busquedas interfaz_2
+all:  int3 login busquedas interfaz_2 interfazx
 
 int3: ${Int3}
 	${CC} -o int3 ${Int3} ${CFLAGS}
@@ -25,6 +26,9 @@ busquedas:${BUSQUEDA}
 
 interfaz_2: ${INTERFAZ_2}
 	${CC} -o Interfaz_2 ${INTERFAZ_2} ${CFLAGS}
+	
+interfazx: ${INTERFAZX}
+	${CC} -o interfazX ${INTERFAZX} ${CFLAGS}
 
 limpiar: ${OBJETOS}
 	rm -f int3 ${OBJETOS}
