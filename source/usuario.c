@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
  
 typedef struct Usuario
 {
@@ -8,41 +9,55 @@ typedef struct Usuario
    int   usuario_id;
 } Usuario ;
 
-void  construct(Usuario *const  u, int usuario_id, char nombre[], char password [] )
+typedef Usuario *ptrUsuario;
+
+ptrUsuario  construct(int usuario_id, char nombre[], char password [] )
 {
- 	 u->usuario_id=usuario_id;
+	 ptrUsuario u = (struct Usuario *) malloc (sizeof(struct Usuario));
+ 	 
+	 u->usuario_id=usuario_id;
  	 strcpy(u->nombre, nombre);
  	 strcpy( u->password,password);	
+
+     	 return u;
 }
-int getId (Usuario *const u){
+
+int getId (ptrUsuario u){
 	return u->usuario_id;
 }
-void  setId(Usuario * const u, int usuario_id ){
+
+void  setId(ptrUsuario u, int usuario_id ){
 	u->usuario_id=usuario_id;
 }
-char [] getNombre(Usuario *const u ){
+
+char* getNombre(Usuario *const u ){
       	return u->nombre;
 }
-void setNombre( Usuario *const u, char nombre[] )
+
+void setNombre( ptrUsuario u, char nombre[] )
 {
 	strcpy(u->nombre, nombre);
 }
 
-char [] getPassword(Usuario *const u ){
+char* getPassword(ptrUsuario u ){
       	return u->password;
 }
-void setPassword( Usuario *const u, char passw[] )
+
+void setPassword( ptrUsuario u, char passw[] )
 {
  	strcpy(u->password, passw);
 }
 
+int main( )
+{
+   ptrUsuario u = construct(12,"Nua", "pass");		
+   
+   printf( "Usuario id : %d\n",getId(u));
+   printf( "Usuario Nombre : %s\n",getNombre(u));
+   printf( "Usuario Password : %s\n",getPassword(u));
 
-
-
-
-
-
-
+   return 0;
+}
 
 
 
