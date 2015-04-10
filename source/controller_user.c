@@ -6,9 +6,12 @@
 
 int main( )
 {  
-   Usuario  u;
-        construct(&u ,12,"Nua", "pass");
-        printf("Usuario %d,  %s , %s ", u.usuario_id, u.nombre, u.password);
+   ptrUsuario u = construct(12,"Nua", "pass");		
+   
+   printf( "Usuario id : %d\n",getId(u));
+   printf( "Usuario Nombre : %s\n",getNombre(u));
+   printf( "Usuario Password : %s\n",getPassword(u));
+
    return 0;
 }
 
