@@ -1,12 +1,17 @@
-all : Socket.o Socket_Servidor.o Socket_Cliente.o Servidor Cliente
+OBJETOS_C = Socket.o Socket_Cliente.o
+OBJETOS_S = Socket.o Socket_Servidor.o
+SERVIDOR_F = Servidor.c
+CLIENTE_F = Cliente.c
+CFLAGS = -I.
+CC = gcc
 
-CPPFLAGS = -g -I.
+all : Servidor Cliente
 
-Servidor : Servidor.c
-	cc -g -I. Socket.o Socket_Servidor.o Servidor.c -o Servidor
+Servidor : ${OBJETOS_S} ${SERVIDOR_F}
+	${CC} ${CFLAGS} ${OBJETOS_S} ${SERVIDOR_F} -o  servidor
 
-Cliente : Cliente.c
-	cc -g -I. Socket.o Socket_Cliente.o Cliente.c -o Cliente
+Cliente : ${OBJETOS_C} ${CLIENTE_F}
+	${CC} ${CFLAGS} ${OBJETOS_C} ${CLIENTE_F} -o  cliente
 
 clean :
-	rm *.o Cliente Servidor
+	rm *.o cliente servidor
