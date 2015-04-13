@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <gtk/gtk.h>
 #include <libintl.h>
 #include <locale.h>
@@ -11,8 +12,7 @@ void imprime( GtkWidget *widget, gpointer   data )
 int main( int   argc, char *argv[] )
 {
 
-
-	bind_textodomain_codeset("Point-Store","UTF-8");
+        bind_textdomain_codeset ("Point-Store", "UTF-8");
 	setlocale(LC_ALL, "");
 	bindtextdomain("Point-Store", "idioma");
 	textdomain("Point-Store");
@@ -23,7 +23,7 @@ int main( int   argc, char *argv[] )
         GtkWidget *caja_usuario;                //Contenedor para alinear los elementos del usuario horizontalmente
         GtkWidget *caja_code;                   //Contenedor para alinear los elementos del codeord horizontalmente
         GtkWidget *caja_boton;                  //Contenedor para alinear el boton horizontalmente
-        GtkWidget *boton;                       //Boton 
+        GtkWidget *boton;                       //Boton
         GtkWidget* usuario;                     //Etiqueta de usuario
         GtkWidget* entrada_usuario;             //Campo del usuario
         GtkWidget* code;                       //Etiqueta de codeord

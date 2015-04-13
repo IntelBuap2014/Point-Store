@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include <libintl.h>
 #include <locale.h>
+#define _(cadena) gettext (cadena)
 
 int main(int argc, char *argv[]) {
 bind_textdomain_codeset ("Point-Store", "UTF-8");

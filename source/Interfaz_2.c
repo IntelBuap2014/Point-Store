@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include <libintl.h>
 #include <locale.h>
+#define _(cadena) gettext (cadena)
 
 static void
 print_hello (GtkWidget *widget,
@@ -28,7 +29,7 @@ activate (GtkApplication *app,
   /* Pack the container in the window */
   gtk_container_add (GTK_CONTAINER (window), grid);
 
-  button = gtk_button_new_with_label (_("Inventario");
+  button = gtk_button_new_with_label (_("Inventario"));
   g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
 
   /* Place the first button in the grid cell (0, 0), and make it fill
