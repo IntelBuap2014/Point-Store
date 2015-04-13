@@ -39,7 +39,7 @@ int main( int   argc, char *argv[] )
                                 NULL);
         gtk_container_set_border_width (GTK_CONTAINER (window), 10);
         //Se inicializa el frame con el titulo correspondiente
-        frame_search = gtk_frame_new ("Buscar");
+        frame_search = gtk_frame_new (_("Buscar"));
         //Se agrega el frame a la ventana principal
         gtk_container_add (GTK_CONTAINER (window), frame_search);
         //Se incializa el contenedor vertical
