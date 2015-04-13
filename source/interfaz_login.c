@@ -1,4 +1,8 @@
 #include <gtk/gtk.h>
+#include <libintl.h>
+#include <locale.h>
+
+#define _(cadena) gettext(cadena)
 
 //Funcion que recibe los datos del login*
 void imprime( GtkWidget *widget, gpointer   data )
@@ -8,6 +12,10 @@ void imprime( GtkWidget *widget, gpointer   data )
 //Funcion main
 int main( int   argc, char *argv[] )
 {
+	bind_textdomain_codeset ("pointstore", "UTF-8");
+	setlocale(LC_ALL, "");
+	bindtextdomain("pointstore", "idioma");
+	textdomain("pointstore");
 	//Definicion de los elementos de la interfaz (Todas las clases se heredan de GtkWidget)
 	static GtkWidget* window = NULL;	//Ventana principal
 	GtkWidget *frame_titulo;		//Frame con titulo (Login)
@@ -46,7 +54,7 @@ int main( int   argc, char *argv[] )
 	gtk_button_box_set_layout (GTK_BUTTON_BOX (caja_usuario), GTK_BUTTONBOX_SPREAD);
 	gtk_box_set_spacing (GTK_BOX (caja_usuario), 40);
 	//Se inicializa la etiquete de usuario
-	usuario=gtk_label_new("Usuario");
+	usuario=gtk_label_new(_("Usuario"));
 	//Se agrega la etiqueta en el contenedor de usuario
 	gtk_container_add (GTK_CONTAINER (caja_usuario), usuario);
 	//Se inicializa el campo de usuario
@@ -62,7 +70,7 @@ int main( int   argc, char *argv[] )
 	gtk_button_box_set_layout (GTK_BUTTON_BOX (caja_passw), GTK_BUTTONBOX_SPREAD);
 	gtk_box_set_spacing (GTK_BOX (caja_passw), 40);
 	//Se inicializa la etiqueta de password
-	passw=gtk_label_new("Contraseña");
+	passw=gtk_label_new(_("Contraseña"));
 	//Se agrega la etiqueta al contenedor de password
 	gtk_container_add (GTK_CONTAINER (caja_passw), passw);
 	//Se inicializa el campo de password
