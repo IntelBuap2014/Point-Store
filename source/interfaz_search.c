@@ -54,7 +54,7 @@ int main( int   argc, char *argv[] )
         gtk_button_box_set_layout (GTK_BUTTON_BOX (caja_usuario), GTK_BUTTONBOX_SPREAD);
         gtk_box_set_spacing (GTK_BOX (caja_usuario), 40);
         //Se inicializa la etiquete de usuario
-        usuario=gtk_label_new("Buscar por Codigo");
+        usuario=gtk_label_new(_("Buscar por Codigo"));
         //Se agrega la etiqueta en el contenedor de usuario
         gtk_container_add (GTK_CONTAINER (caja_usuario), usuario);
         //Se inicializa el campo de usuario
@@ -70,7 +70,7 @@ int main( int   argc, char *argv[] )
         gtk_button_box_set_layout (GTK_BUTTON_BOX (caja_code), GTK_BUTTONBOX_SPREAD);
         gtk_box_set_spacing (GTK_BOX (caja_code), 40);
 //Se inicializa la etiqueta de codeord
-        code=gtk_label_new("Bucar por Nombre");
+        code=gtk_label_new(_("Buscar por Nombre"));
         //Se agrega la etiqueta al contenedor de codeord
         gtk_container_add (GTK_CONTAINER (caja_code),code);
         //Se inicializa el campo de codeord
