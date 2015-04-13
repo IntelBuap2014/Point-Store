@@ -1,6 +1,13 @@
 #include <gtk/gtk.h>
+#include <libintl.h>
+#include <locale.h>
 
 int main(int argc, char *argv[]) {
+bind_textdomain_codeset ("Point-Store", "UTF-8");
+setlocale(LC_ALL, "");
+bindtextdomain("Point-Store", "idioma");
+textdomain("Point-Store");
+
   GtkWidget *window;
   GtkWidget *table;
 
@@ -14,7 +21,7 @@ int main(int argc, char *argv[]) {
 
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
-  gtk_window_set_title(GTK_WINDOW(window), "xyz");
+  gtk_window_set_title(GTK_WINDOW(window), "Verificar existencxyz");
   gtk_container_set_border_width(GTK_CONTAINER(window), 10);
 
   table = gtk_table_new(2, 2, FALSE);
