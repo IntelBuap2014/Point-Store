@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Point-Store 0.1\n"
 "Report-Msgid-Bugs-To: yeniseirape@gmail.com\n"
-"POT-Creation-Date: 2015-04-13 17:34-0500\n"
+"POT-Creation-Date: 2015-04-13 17:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: interfaz_search.c:42
+msgid "Buscar"
+msgstr ""
+
+#: interfaz_search.c:57
+msgid "Buscar por Codigo"
+msgstr ""
+
+#: interfaz_search.c:73
+msgid "Buscar por Nombre"
+msgstr ""
+
 #: int3.c:90
 msgid "Cerrar"
 msgstr ""
 
 #: Interfaz_2.c:47
 msgid "Clientes"
+msgstr ""
+
+#: interfazX.c:30
+msgid "Codigo"
 msgstr ""
 
 #: int3.c:72
@@ -53,6 +69,10 @@ msgstr ""
 msgid "Marca: "
 msgstr ""
 
+#: interfazX.c:31
+msgid "Nombre"
+msgstr ""
+
 #: int3.c:69
 msgid "Nombre: "
 msgstr ""
@@ -77,6 +97,10 @@ msgstr ""
 
 #: Interfaz_2.c:55
 msgid "Ventas"
+msgstr ""
+
+#: interfazX.c:24
+msgid "Verificar existencia"
 msgstr ""
 
 #: Interfaz_2.c:22
