@@ -19,71 +19,71 @@ msgstr ""
 
 #: interfaz_search.c:42
 msgid "Buscar"
-msgstr "Buscar"
+msgstr "Search"
 
 #: interfaz_search.c:57
 msgid "Buscar por Codigo"
-msgstr "Buscar por Codigo"
+msgstr "Search by Code"
 
 #: interfaz_search.c:73
 msgid "Buscar por Nombre"
-msgstr "Buscar por Nombre"
+msgstr "Search by Name"
 
 #: int3.c:90
 msgid "Cerrar"
-msgstr "Cerrar"
+msgstr "Exit"
 
 #: Interfaz_2.c:47
 msgid "Clientes"
-msgstr "Clientes"
+msgstr "Clients"
 
 #: interfazX.c:30
 msgid "Codigo"
-msgstr "Codigo"
+msgstr "Code"
 
 #: int3.c:72
 msgid "Codigo de Barras: "
-msgstr "Codigo de Barras: "
+msgstr "Barcode: "
 
 #: interfaz_login.c:73
 msgid "Contraseña"
-msgstr "Contraseña"
+msgstr "Password"
 
 #: int3.c:71
 msgid "Descripcion del Producto: "
-msgstr "Descripcion del Producto: "
+msgstr "Product Description: "
 
 #: Interfaz_2.c:39
 msgid "Facturas"
-msgstr "Facturas"
+msgstr "Bills"
 
 #: int3.c:63
 msgid "Información del producto"
-msgstr "Información del producto"
+msgstr "Product Information"
 
 #: Interfaz_2.c:31
 msgid "Inventario"
-msgstr "Inventario"
+msgstr "Inventory"
 
 #: int3.c:70
 msgid "Marca: "
-msgstr "Marca: "
+msgstr "Brand: "
 
 #: interfazX.c:31
 msgid "Nombre"
-msgstr "Nombre"
+msgstr "Name"
 
 #: int3.c:69
 msgid "Nombre: "
-msgstr "Nombre: "
+msgstr "Name: "
 
 #: int3.c:60
 msgid "Nuevo Producto"
-msgstr "Nuevo Producto"
+msgstr "New Product"
 
 #: int3.c:89
 msgid "Registrar"
-msgstr "Registrar"
+msgstr "Register"
 
 #: int3.c:29
 #, c-format
@@ -94,15 +94,15 @@ msgstr ""
 
 #: interfaz_login.c:57
 msgid "Usuario"
-msgstr "Usuario"
+msgstr "User"
 
 #: Interfaz_2.c:55
 msgid "Ventas"
-msgstr "Ventas"
+msgstr "Sales"
 
 #: interfazX.c:24
 msgid "Verificar existencia"
-msgstr "Verificar existencia"
+msgstr "Check Inventory"
 
 #: Interfaz_2.c:22
 msgid "Window"
