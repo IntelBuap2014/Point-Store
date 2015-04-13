@@ -1,4 +1,6 @@
 #include <gtk/gtk.h>
+#include <libintl.h>
+#include <locale.h>
 
 static void
 print_hello (GtkWidget *widget,
@@ -72,7 +74,13 @@ int
 main (int    argc,
       char **argv)
 {
-  GtkApplication *app;
+  
+	bind_textdomain_codeset ("PointStore", "UTF-8");
+	setlocale(LC_ALL, "");
+	bindtextdomain("PointStore", "idioma");
+	textdomain("PointStore");
+
+	GtkApplication *app;
   int status;
 
   app = gtk_application_new ("org.gtk.example", G_APPLICATION_FLAGS_NONE);

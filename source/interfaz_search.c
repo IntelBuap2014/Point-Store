@@ -1,5 +1,7 @@
 #include <gtk/gtk.h>
-
+#include <libintl.h>
+#include <locale.h>
+#define _(cadena) gettext (cadena)
 //Funcion que recibe los datos del login*
 void imprime( GtkWidget *widget, gpointer   data )
 {
@@ -8,6 +10,12 @@ void imprime( GtkWidget *widget, gpointer   data )
 //Funcion main
 int main( int   argc, char *argv[] )
 {
+
+
+	bind_textodomain_codeset("PointStore","UTF-8");
+	setlocale(LC_ALL, "");
+	bindtextdomain("PointStores", "idioma");
+	textdomain("PointStore");
         //Definicion de los elementos de la interfaz (Todas las clases se heredan de GtkWidget)
         static GtkWidget* window = NULL;        //Ventana principal
         GtkWidget *frame_search;                //Frame con titulo (Login)
