@@ -21,14 +21,14 @@ textdomain("Point-Store");
 
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
-  gtk_window_set_title(GTK_WINDOW(window), "Verificar existencxyz");
+  gtk_window_set_title(GTK_WINDOW(window), _("Verificar existencia"));
   gtk_container_set_border_width(GTK_CONTAINER(window), 10);
 
   table = gtk_table_new(2, 2, FALSE);
   gtk_container_add(GTK_CONTAINER(window), table);
 
-  label1 = gtk_label_new("x");
-  label2 = gtk_label_new("y");
+  label1 = gtk_label_new(_("Codigo"));
+  label2 = gtk_label_new(_("Nombre"));
 
   gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
   gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
