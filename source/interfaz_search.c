@@ -12,10 +12,10 @@ int main( int   argc, char *argv[] )
 {
 
 
-	bind_textodomain_codeset("PointStore","UTF-8");
+	bind_textodomain_codeset("Point-Store","UTF-8");
 	setlocale(LC_ALL, "");
-	bindtextdomain("PointStores", "idioma");
-	textdomain("PointStore");
+	bindtextdomain("Point-Store", "idioma");
+	textdomain("Point-Store");
         //Definicion de los elementos de la interfaz (Todas las clases se heredan de GtkWidget)
         static GtkWidget* window = NULL;        //Ventana principal
         GtkWidget *frame_search;                //Frame con titulo (Login)

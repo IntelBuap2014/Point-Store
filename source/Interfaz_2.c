@@ -75,10 +75,10 @@ main (int    argc,
       char **argv)
 {
   
-	bind_textdomain_codeset ("PointStore", "UTF-8");
+	bind_textdomain_codeset ("Point-Store", "UTF-8");
 	setlocale(LC_ALL, "");
-	bindtextdomain("PointStore", "idioma");
-	textdomain("PointStore");
+	bindtextdomain("Point-Store", "idioma");
+	textdomain("Point-Store");
 
 	GtkApplication *app;
   int status;
