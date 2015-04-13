@@ -12,10 +12,10 @@ void imprime( GtkWidget *widget, gpointer   data )
 //Funcion main
 int main( int   argc, char *argv[] )
 {
-	bind_textdomain_codeset ("pointstore", "UTF-8");
+	bind_textdomain_codeset ("Point-Store", "UTF-8");
 	setlocale(LC_ALL, "");
-	bindtextdomain("pointstore", "idioma");
-	textdomain("pointstore");
+	bindtextdomain("Point-Store", "idioma");
+	textdomain("Point-Store");
 	//Definicion de los elementos de la interfaz (Todas las clases se heredan de GtkWidget)
 	static GtkWidget* window = NULL;	//Ventana principal
 	GtkWidget *frame_titulo;		//Frame con titulo (Login)
