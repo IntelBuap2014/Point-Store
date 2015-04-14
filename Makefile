@@ -28,4 +28,4 @@ interfazx: ${INTERFAZX}
 	${CC} -o interfazX ${INTERFAZX} ${CFLAGS}
 
 limpiar:
-
+	rm I_busqueda I_login int3 Interfaz_2 interfazX
