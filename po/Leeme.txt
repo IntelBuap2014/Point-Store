@@ -1,0 +1,8 @@
+
+
+xgettext --package-name Point-Store --package-version 0.1 --default-domain Point-Store --output po/Point-Store.pot --from-code=utf-8 --copyright-holder="Yenisei" --msgid-bugs-address="yeniseirape@gmail.com" -s -k_ -L C int3.c Interfaz_2.c interfaz_login.c interfaz_search.c interfazX.c
+
+
+msginit -l en -o po/en.po -i po/Point-Store.pot
+
+msgfmt -c -v -o idioma/en/LC_MESSAGES/Point-Store.mo po/en.po
