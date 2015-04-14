@@ -7,13 +7,13 @@ INTERFAZX = interfazX.c
 CFLAGS = `pkg-config --libs --cflags gtk+-2.0`
 CFLAGS2 = `pkg-config --libs --cflags gtk+-3.0`
 CC = gcc
-DIRBIN = ../bin
+DIRBIN = .
 .PHONY: all limpiar int3
 
 all:  creacion_directorios int3 login busquedas interfaz_2 interfazx
 
 creacion_directorios:
-	mkdir ../bin
+	mkdir bin
 
 int3: ${Int3}
 	${CC} -o ${DIRBIN}/int3 ${Int3} ${CFLAGS}
@@ -31,4 +31,4 @@ interfazx: ${INTERFAZX}
 	${CC} -o ${DIRBIN}/interfazX ${INTERFAZX} ${CFLAGS}
 
 limpiar:
-	rm -rf ${DIRBIN}/
+

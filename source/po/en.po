@@ -1,17 +1,17 @@
-# Spanish translations for Point-Store package.
+# English translations for Point-Store package.
 # Copyright (C) 2015 Yenisei
 # This file is distributed under the same license as the Point-Store package.
-# Rozy <yeniseirape@gmail.com>, 2015.
+# yramirez <yeniseirape@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Point-Store 0.1\n"
 "Report-Msgid-Bugs-To: yeniseirape@gmail.com\n"
-"POT-Creation-Date: 2015-04-13 17:43-0500\n"
-"PO-Revision-Date: 2015-04-13 18:32-0500\n"
-"Last-Translator: Rozy <yeniseirape@gmail.com>\n"
-"Language-Team: Spanish\n"
-"Language: es\n"
+"POT-Creation-Date: 2015-04-13 19:17-0500\n"
+"PO-Revision-Date: 2015-04-13 19:19-0500\n"
+"Last-Translator: yramirez <yeniseirape@gmail.com>\n"
+"Language-Team: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,90 +19,91 @@ msgstr ""
 
 #: interfaz_search.c:42
 msgid "Buscar"
-msgstr ""
+msgstr "Search"
 
 #: interfaz_search.c:57
 msgid "Buscar por Codigo"
-msgstr ""
+msgstr "Search by Code"
 
 #: interfaz_search.c:73
 msgid "Buscar por Nombre"
-msgstr ""
+msgstr "Search by Name"
 
 #: int3.c:90
 msgid "Cerrar"
-msgstr ""
+msgstr "Exit"
 
-#: Interfaz_2.c:47
+#: Interfaz_2.c:48
 msgid "Clientes"
-msgstr ""
+msgstr "Customers"
 
-#: interfazX.c:30
+#: interfazX.c:31
 msgid "Codigo"
-msgstr ""
+msgstr "Code"
 
 #: int3.c:72
 msgid "Codigo de Barras: "
-msgstr ""
+msgstr "Barcode: "
 
 #: interfaz_login.c:73
 msgid "Contraseña"
-msgstr ""
+msgstr "Password"
 
 #: int3.c:71
 msgid "Descripcion del Producto: "
-msgstr ""
+msgstr "Product Description: "
 
-#: Interfaz_2.c:39
+#: Interfaz_2.c:40
 msgid "Facturas"
-msgstr ""
+msgstr "Bills"
 
 #: int3.c:63
 msgid "Información del producto"
-msgstr ""
+msgstr "Product Information"
 
-#: Interfaz_2.c:31
+#: Interfaz_2.c:32
 msgid "Inventario"
-msgstr ""
+msgstr "Inventory"
 
 #: int3.c:70
 msgid "Marca: "
-msgstr ""
+msgstr "Brand: "
 
-#: interfazX.c:31
+#: interfazX.c:32
 msgid "Nombre"
-msgstr ""
+msgstr "Name"
 
 #: int3.c:69
 msgid "Nombre: "
-msgstr ""
+msgstr "Name: "
 
 #: int3.c:60
 msgid "Nuevo Producto"
-msgstr ""
+msgstr "New Product"
 
 #: int3.c:89
 msgid "Registrar"
-msgstr ""
+msgstr "Sign up"
 
 #: int3.c:29
 #, c-format
 msgid ""
 "Se escribio el producto con codigo %s , de nombre %s de la marca %s %s \n"
 msgstr ""
+"Se escribio el producto con codigo %s , de nombre %s de la marca %s %s \n"
 
 #: interfaz_login.c:57
 msgid "Usuario"
-msgstr ""
+msgstr "User"
 
-#: Interfaz_2.c:55
+#: Interfaz_2.c:56
 msgid "Ventas"
-msgstr ""
+msgstr "Sales"
 
-#: interfazX.c:24
+#: interfazX.c:25
 msgid "Verificar existencia"
-msgstr ""
+msgstr "Check Inventory"
 
-#: Interfaz_2.c:22
-msgid "Window"
-msgstr ""
+#: Interfaz_2.c:23
+msgid "Ventana"
+msgstr "Window"

@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Point-Store 0.1\n"
 "Report-Msgid-Bugs-To: yeniseirape@gmail.com\n"
-"POT-Creation-Date: 2015-04-13 17:43-0500\n"
+"POT-Creation-Date: 2015-04-13 19:17-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +33,11 @@ msgstr ""
 msgid "Cerrar"
 msgstr ""
 
-#: Interfaz_2.c:47
+#: Interfaz_2.c:48
 msgid "Clientes"
 msgstr ""
 
-#: interfazX.c:30
+#: interfazX.c:31
 msgid "Codigo"
 msgstr ""
 
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Descripcion del Producto: "
 msgstr ""
 
-#: Interfaz_2.c:39
+#: Interfaz_2.c:40
 msgid "Facturas"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Información del producto"
 msgstr ""
 
-#: Interfaz_2.c:31
+#: Interfaz_2.c:32
 msgid "Inventario"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Marca: "
 msgstr ""
 
-#: interfazX.c:31
+#: interfazX.c:32
 msgid "Nombre"
 msgstr ""
 
@@ -95,14 +95,14 @@ msgstr ""
 msgid "Usuario"
 msgstr ""
 
-#: Interfaz_2.c:55
+#: Interfaz_2.c:56
 msgid "Ventas"
 msgstr ""
 
-#: interfazX.c:24
+#: interfazX.c:25
 msgid "Verificar existencia"
 msgstr ""
 
-#: Interfaz_2.c:22
+#: Interfaz_2.c:23
 msgid "Window"
 msgstr ""
