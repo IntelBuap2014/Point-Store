@@ -1,0 +1,12 @@
+Avance
+	desarrollo de 5 interfaces: principal, login, agregar producto, buscar producto, verificar existencia produto
+	Internacionalizacion con uso de gettext
+	Desarrollo de base de datos
+	Avances de documentación
+	Bases Cliente-Servidor 	
+
+
+Pendientes 
+	Ligar las interfaces, desarrollar las interfaces restantes
+	conexion a la base de datos
+	
