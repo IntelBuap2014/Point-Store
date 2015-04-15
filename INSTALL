@@ -1,15 +1,19 @@
+# Como Instalar Point-Store
+
 1. Requerimientos mínimos
 2. Instalación
 
 --------------------------------------------------------------------
-1.Requerimientos mínimos 
+1.Requerimientos mínimos
 --------------------------------------------------------------------
+ autoconf
+ automake
  gtk 3
  gcc 4.9
- mysql 
- make 
- glibc 
- 
+ mysql
+ make
+ glibc
+
 --------------------------------------------------------------------
 2. Instalación
 --------------------------------------------------------------------
