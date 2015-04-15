@@ -8,8 +8,8 @@ Aplicacion que proporcione el control administrativo de un punto de venta( Altas
     $ make
 
 -   Si las cadenas a mostrar al usuario fueron eliminadas, modificadas o agregadas, se deben ver reflejadas
-    en el template pot, para esto ejecutamos generamos el template y actualizamos el archivo po, para su
-    posterior traduccion. Lo hacemos de la siguiente forma:
+    en el template pot, para esto generamos el template y actualizamos el archivo po con los nuevos cambios.
+    Lo hacemos de la siguiente forma:
 
     $ make actualizar-archivos-po
 

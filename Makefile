@@ -6,7 +6,6 @@ INTERFAZ_2 = source/Interfaz_2.c
 INTERFAZX = source/interfazX.c
 CFLAGS = `pkg-config --libs --cflags gtk+-3.0`
 CC = gcc
-DIRBIN = source
 
 .PHONY: all limpiar int3
 
