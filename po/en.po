@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Point-Store 0.1\n"
 "Report-Msgid-Bugs-To: yeniseirape@gmail.com\n"
-"POT-Creation-Date: 2015-04-13 19:17-0500\n"
+"POT-Creation-Date: 2015-04-15 00:44-0500\n"
 "PO-Revision-Date: 2015-04-13 19:19-0500\n"
 "Last-Translator: yramirez <yeniseirape@gmail.com>\n"
 "Language-Team: English\n"
@@ -17,93 +17,89 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: interfaz_search.c:42
+#: source/interfaz_search.c:42
 msgid "Buscar"
 msgstr "Search"
 
-#: interfaz_search.c:57
+#: source/interfaz_search.c:57
 msgid "Buscar por Codigo"
 msgstr "Search by Code"
 
-#: interfaz_search.c:73
+#: source/interfaz_search.c:73
 msgid "Buscar por Nombre"
 msgstr "Search by Name"
 
-#: int3.c:90
+#: source/int3.c:89
 msgid "Cerrar"
 msgstr "Exit"
 
-#: Interfaz_2.c:48
+#: source/Interfaz_2.c:48
 msgid "Clientes"
 msgstr "Customers"
 
-#: interfazX.c:31
+#: source/interfazX.c:31
 msgid "Codigo"
 msgstr "Code"
 
-#: int3.c:72
+#: source/int3.c:71
 msgid "Codigo de Barras: "
 msgstr "Barcode: "
 
-#: interfaz_login.c:73
+#: source/interfaz_login.c:73
 msgid "Contraseña"
 msgstr "Password"
 
-#: int3.c:71
+#: source/int3.c:70
 msgid "Descripcion del Producto: "
 msgstr "Product Description: "
 
-#: Interfaz_2.c:40
+#: source/Interfaz_2.c:40
 msgid "Facturas"
 msgstr "Bills"
 
-#: int3.c:63
+#: source/int3.c:62
 msgid "Información del producto"
 msgstr "Product Information"
 
-#: Interfaz_2.c:32
+#: source/Interfaz_2.c:32
 msgid "Inventario"
 msgstr "Inventory"
 
-#: int3.c:70
+#: source/int3.c:69
 msgid "Marca: "
 msgstr "Brand: "
 
-#: interfazX.c:32
+#: source/interfazX.c:32
 msgid "Nombre"
 msgstr "Name"
 
-#: int3.c:69
+#: source/int3.c:68
 msgid "Nombre: "
 msgstr "Name: "
 
-#: int3.c:60
+#: source/int3.c:59
 msgid "Nuevo Producto"
 msgstr "New Product"
 
-#: int3.c:89
+#: source/int3.c:88
 msgid "Registrar"
 msgstr "Sign up"
 
-#: int3.c:29
-#, c-format
-msgid ""
-"Se escribio el producto con codigo %s , de nombre %s de la marca %s %s \n"
-msgstr ""
-"Se escribio el producto con codigo %s , de nombre %s de la marca %s %s \n"
-
-#: interfaz_login.c:57
+#: source/interfaz_login.c:57
 msgid "Usuario"
 msgstr "User"
 
-#: Interfaz_2.c:56
+#: source/Interfaz_2.c:23
+msgid "Ventana"
+msgstr "Window"
+
+#: source/Interfaz_2.c:56
 msgid "Ventas"
 msgstr "Sales"
 
-#: interfazX.c:25
+#: source/interfazX.c:25
 msgid "Verificar existencia"
-msgstr "Check Inventory"
+msgstr "Check Exists"
 
-#: Interfaz_2.c:23
-msgid "Ventana"
-msgstr "Window"
+#~ msgid "Nueva Cadena"
+#~ msgstr "New String"

@@ -26,8 +26,7 @@ static gboolean callback(GtkWidget *widget, gpointer data){
   Marca = gtk_entry_get_text(GTK_ENTRY(pd->EtMarca));
   Descripcion = gtk_entry_get_text(GTK_ENTRY(pd->EtDescr));
 
-  g_print(_("Se escribio el producto con codigo %s , de nombre %s de la marca %s %s \n"), Codigo, Nombre, Marca, Descripcion);
-
+  g_print("Se escribio el producto con codigo %s , de nombre %s de la marca %s %s \n", Codigo, Nombre, Marca, Descripcion);
 }
 
 int main(int argc, char *argv[]) {
