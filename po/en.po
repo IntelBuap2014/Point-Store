@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Point-Store 0.1\n"
 "Report-Msgid-Bugs-To: yeniseirape@gmail.com\n"
-"POT-Creation-Date: 2015-04-15 23:19-0500\n"
+"POT-Creation-Date: 2015-04-16 06:01-0500\n"
 "PO-Revision-Date: 2015-04-13 19:19-0500\n"
 "Last-Translator: yramirez <yeniseirape@gmail.com>\n"
 "Language-Team: English\n"
@@ -17,89 +17,98 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/interfaz_search.c:42
+#: src/interfaz_login.c:57 src/interfaz_search.c:56 src/interfazX.c:56
+msgid "Aceptar"
+msgstr "Accept"
+
+#: src/interfaz_search.c:32
 msgid "Buscar"
 msgstr "Search"
 
-#: src/interfaz_search.c:57
-msgid "Buscar por Codigo"
+#: src/interfaz_search.c:39
+msgid "Buscar por Código"
 msgstr "Search by Code"
 
-#: src/interfaz_search.c:73
+#: src/interfaz_search.c:47
 msgid "Buscar por Nombre"
 msgstr "Search by Name"
 
-#: src/int3.c:89
+#: src/int3.c:79
 msgid "Cerrar"
 msgstr "Exit"
 
-#: src/Interfaz_2.c:48
+#: src/Interfaz_2.c:36
 msgid "Clientes"
 msgstr "Customers"
 
-#: src/interfazX.c:31
-msgid "Codigo"
-msgstr "Code"
-
-#: src/int3.c:71
-msgid "Codigo de Barras: "
-msgstr "Barcode: "
-
-#: src/interfaz_login.c:73
+#: src/interfaz_login.c:47
 msgid "Contraseña"
 msgstr "Password"
 
-#: src/int3.c:70
-msgid "Descripcion del Producto: "
+#: src/interfazX.c:39
+msgid "Código"
+msgstr "Code"
+
+#: src/int3.c:45
+msgid "Código de Barras"
+msgstr "Barcode: "
+
+#: src/int3.c:69
+msgid "Descripción del Producto"
 msgstr "Product Description: "
 
-#: src/Interfaz_2.c:40
+#: src/Interfaz_2.c:35
 msgid "Facturas"
 msgstr "Bills"
 
-#: src/int3.c:62
-msgid "Información del producto"
-msgstr "Product Information"
+#: src/interfaz_login.c:32
+msgid "Iniciar Sesión"
+msgstr "Login"
 
-#: src/Interfaz_2.c:32
+#: src/Interfaz_2.c:27
+msgid "Interfaz_2"
+msgstr "Interfaz_2"
+
+#: src/Interfaz_2.c:34
 msgid "Inventario"
 msgstr "Inventory"
 
-#: src/int3.c:69
-msgid "Marca: "
+#: src/int3.c:61
+msgid "Marca"
 msgstr "Brand: "
 
-#: src/interfazX.c:32
+#: src/int3.c:53 src/interfazX.c:47
 msgid "Nombre"
 msgstr "Name"
 
-#: src/int3.c:68
-msgid "Nombre: "
-msgstr "Name: "
-
-#: src/int3.c:59
+#: src/int3.c:38
 msgid "Nuevo Producto"
 msgstr "New Product"
 
-#: src/int3.c:88
+#: src/int3.c:78
 msgid "Registrar"
 msgstr "Sign up"
 
-#: src/interfaz_login.c:57
+#: src/interfaz_login.c:39
 msgid "Usuario"
 msgstr "User"
 
-#: src/Interfaz_2.c:23
-msgid "Ventana"
-msgstr "Window"
-
-#: src/Interfaz_2.c:56
+#: src/Interfaz_2.c:37
 msgid "Ventas"
 msgstr "Sales"
 
-#: src/interfazX.c:25
-msgid "Verificar existencia"
+#: src/interfazX.c:32
+msgid "Verificar Existencia"
 msgstr "Check Exists"
+
+#~ msgid "Información del producto"
+#~ msgstr "Product Information"
+
+#~ msgid "Nombre: "
+#~ msgstr "Name: "
 
 #~ msgid "Nueva Cadena"
 #~ msgstr "New String"
+
+#~ msgid "Ventana"
+#~ msgstr "Window"
