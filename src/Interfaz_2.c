@@ -1,93 +1,54 @@
 #include <gtk/gtk.h>
 #include <libintl.h>
 #include <locale.h>
-#define _(cadena) gettext (cadena)
+#define _(String) gettext(String)
 
-static void
-print_hello (GtkWidget *widget,
-             gpointer   data)
-{
-  g_print ("Hello World\n");
-}
-
-static void
-activate (GtkApplication *app,
-          gpointer        user_data)
-{
+int main(int argc, char *argv[]){
+  bind_textdomain_codeset("Point-Store", "UTF-8");
+  setlocale(LC_ALL, "");
+  bindtextdomain("Point-Store", "idioma");
+  textdomain("Point-Store");
   GtkWidget *window;
-  GtkWidget *grid;
-  GtkWidget *button;
+  GtkWidget *frame;
+  GtkWidget *box1;
+  GtkWidget *box2;
+  GtkWidget *button1;
+  GtkWidget *button2;
+  GtkWidget *button3;
+  GtkWidget *button4;
 
-  /* create a new window, and set its title */
-  window = gtk_application_window_new (app);
-  gtk_window_set_title (GTK_WINDOW (window), _("Ventana"));
-  gtk_container_set_border_width (GTK_CONTAINER (window), 10);
-
-  /* Here we construct the container that is going pack our buttons */
-  grid = gtk_grid_new ();
-
-  /* Pack the container in the window */
-  gtk_container_add (GTK_CONTAINER (window), grid);
-
-  button = gtk_button_new_with_label (_("Inventario"));
-  g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
-
-  /* Place the first button in the grid cell (0, 0), and make it fill
-   * just 1 cell horizontally and vertically (ie no spanning)
-   */
-  gtk_grid_attach (GTK_GRID (grid), button, 0, 0, 4, 1);
-
-  button = gtk_button_new_with_label (_("Facturas"));
-  g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
-
-  /* Place the second button in the grid cell (1, 0), and make it fill
-   * just 1 cell horizontally and vertically (ie no spanning)
-   */
-  gtk_grid_attach (GTK_GRID (grid), button, 0, 1, 4, 1);
-
-  button = gtk_button_new_with_label (_("Clientes"));
-  g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
-
-  /* Place the first button in the grid cell (0, 0), and make it fill
-   * just 1 cell horizontally and vertically (ie no spanning)
-   */
-  gtk_grid_attach (GTK_GRID (grid), button, 0, 2, 4, 1);
-
-  button = gtk_button_new_with_label (_("Ventas"));
-  g_signal_connect (button, "clicked", G_CALLBACK (print_hello), NULL);
-
-  /* Place the second button in the grid cell (1, 0), and make it fill
-   * just 1 cell horizontally and vertically (ie no spanning)
-   */
-  gtk_grid_attach (GTK_GRID (grid), button, 0, 3, 4, 1);
-
-
-  /* Now that we are done packing our widgets, we show them all
-   * in one go, by calling gtk_widget_show_all() on the window.
-   * This call recursively calls gtk_widget_show() on all widgets
-   * that are contained in the window, directly or indirectly.
-   */
-  gtk_widget_show_all (window);
-
-}
-
-int
-main (int    argc,
-      char **argv)
-{
-
-	bind_textdomain_codeset ("Point-Store", "UTF-8");
-	setlocale(LC_ALL, "");
-	bindtextdomain("Point-Store", "idioma");
-	textdomain("Point-Store");
-
-	GtkApplication *app;
-  int status;
-
-  app = gtk_application_new ("org.gtk.example", G_APPLICATION_FLAGS_NONE);
-  g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
-  status = g_application_run (G_APPLICATION (app), argc, argv);
-  g_object_unref (app);
-
-  return status;
+  gtk_init(&argc, &argv);
+  
+  window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+  gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
+  gtk_window_set_title(GTK_WINDOW(window), "PointStore");
+  gtk_container_set_border_width(GTK_CONTAINER(window), 10);
+  
+  frame = gtk_frame_new(_("Interfaz_2"));
+  box1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  
+  gtk_container_add(GTK_CONTAINER(window), frame);
+  gtk_container_add(GTK_CONTAINER(frame),box1);
+  
+  box2 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+  button1 = gtk_button_new_with_label(_("Inventario"));
+  button2 = gtk_button_new_with_label(_("Facturas"));
+  button3 = gtk_button_new_with_label(_("Clientes"));
+  button4 = gtk_button_new_with_label(_("Ventas"));
+  
+  gtk_box_pack_start(GTK_BOX(box1), box2, FALSE, FALSE, 10);
+  gtk_box_pack_start(GTK_BOX(box2), button1, FALSE, TRUE, 10);
+  gtk_box_pack_start(GTK_BOX(box2), button2, FALSE, TRUE, 10);
+  gtk_box_pack_start(GTK_BOX(box2), button3, FALSE, TRUE, 10);
+  gtk_box_pack_start(GTK_BOX(box2), button4, FALSE, TRUE, 10);
+  
+  gtk_box_set_homogeneous(GTK_BOX(box2), TRUE);
+  
+  gtk_widget_show_all(window);
+  
+  g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit),NULL);
+  
+  gtk_main();
+  
+  return 0;
 }
