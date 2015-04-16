@@ -1,58 +1,75 @@
 #include <gtk/gtk.h>
 #include <libintl.h>
 #include <locale.h>
-#define _(cadena) gettext (cadena)
+#define _(String) gettext(String)
 
-int main(int argc, char *argv[]) {
-bind_textdomain_codeset ("Point-Store", "UTF-8");
-setlocale(LC_ALL, "");
-bindtextdomain("Point-Store", "idioma");
-textdomain("Point-Store");
-
+int main(int argc, char *argv[]){
+  bind_textdomain_codeset("Point-Store", "UTF-8");
+  setlocale(LC_ALL, "");
+  bindtextdomain("Point-Store", "idioma");
+  textdomain("Point-Store");
   GtkWidget *window;
-  GtkWidget *table;
-
+  GtkWidget *frame;
+  GtkWidget *box1;
+  GtkWidget *box2;
   GtkWidget *label1;
-  GtkWidget *label2;
-
   GtkWidget *entry1;
+  GtkWidget *box3;
+  GtkWidget *label2;
   GtkWidget *entry2;
-
+  GtkWidget *box5;
+  GtkWidget *box4;
+  GtkWidget *button1;
+  GtkWidget *box6;
+  
   gtk_init(&argc, &argv);
-
+  
   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
-  gtk_window_set_title(GTK_WINDOW(window), _("Verificar existencia"));
+  gtk_window_set_title(GTK_WINDOW(window), "PointStore");
   gtk_container_set_border_width(GTK_CONTAINER(window), 10);
-
-  table = gtk_table_new(2, 2, FALSE);
-  gtk_container_add(GTK_CONTAINER(window), table);
-
-  label1 = gtk_label_new(_("Codigo"));
-  label2 = gtk_label_new(_("Nombre"));
-
-  gtk_table_attach(GTK_TABLE(table), label1, 0, 1, 0, 1, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-  gtk_table_attach(GTK_TABLE(table), label2, 0, 1, 1, 2, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-
+  
+  frame = gtk_frame_new(_("Verificar Existencia"));
+  gtk_container_add(GTK_CONTAINER(window), frame);
+  
+  box1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  gtk_container_add(GTK_CONTAINER(frame),box1);
+  
+  box2 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+  label1 = gtk_label_new(_("Código"));
   entry1 = gtk_entry_new();
+  
+  gtk_box_pack_start(GTK_BOX(box1), box2, TRUE, TRUE, 10);
+  gtk_box_pack_start(GTK_BOX(box2), label1, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(box2), entry1, FALSE, FALSE, 0);
+  
+  box3 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+  label2 = gtk_label_new(_("Nombre"));
   entry2 = gtk_entry_new();
-
-  gtk_table_attach(GTK_TABLE(table), entry1, 1, 2, 0, 1, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-  gtk_table_attach(GTK_TABLE(table), entry2, 1, 2, 1, 2, GTK_FILL | GTK_SHRINK, GTK_FILL | GTK_SHRINK, 5, 5);
-
-  gtk_widget_show(table);
-
-  gtk_widget_show(label1);
-  gtk_widget_show(label2);
-
-  gtk_widget_show(entry1);
-  gtk_widget_show(entry2);
-
-  gtk_widget_show(window);
-
-  g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
-
+  
+  gtk_box_pack_start(GTK_BOX(box1), box3, TRUE, TRUE, 10);
+  gtk_box_pack_start(GTK_BOX(box3), label2, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(box3), entry2, FALSE, FALSE, 10);
+  
+  box4 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+  box5 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+  button1 = gtk_button_new_with_label(_("Aceptar"));
+  box6 = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+  
+  gtk_box_pack_start(GTK_BOX(box1), box4, FALSE, FALSE, 10);
+  gtk_box_pack_start(GTK_BOX(box4), box5, FALSE, FALSE, 0);
+  gtk_box_pack_start(GTK_BOX(box4), button1, FALSE, TRUE, 0);
+  gtk_box_pack_start(GTK_BOX(box4), box6, FALSE, FALSE, 0);
+  
+  gtk_box_set_homogeneous(GTK_BOX(box2), TRUE);
+  gtk_box_set_homogeneous(GTK_BOX(box3), TRUE);
+  gtk_box_set_homogeneous(GTK_BOX(box4), TRUE);
+  
+  gtk_widget_show_all(window);
+  
+  g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit),NULL);
+  
   gtk_main();
-
+  
   return 0;
 }
