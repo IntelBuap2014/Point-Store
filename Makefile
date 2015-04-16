@@ -1,9 +1,9 @@
-
-Int3 = src/int3.c
-LOGIN = src/interfaz_login.c
-BUSQUEDA = src/interfaz_search.c
-INTERFAZ_2 = src/Interfaz_2.c
-INTERFAZX = src/interfazX.c
+DIRSRC = src
+Int3 = ${DIRSRC}/int3.c
+LOGIN = ${DIRSRC}/interfaz_login.c
+BUSQUEDA = ${DIRSRC}/interfaz_search.c
+INTERFAZ_2 = ${DIRSRC}/Interfaz_2.c
+INTERFAZX = ${DIRSRC}/interfazX.c
 CFLAGS = `pkg-config --libs --cflags gtk+-3.0`
 CC = gcc
 
@@ -30,8 +30,8 @@ interfazx: ${INTERFAZX}
 gen-template-pot:
 	xgettext --package-name Point-Store --package-version 0.1 --default-domain Point-Store \
 	--output po/Point-Store.pot --from-code=utf-8 --copyright-holder="Yenisei" \
-	--msgid-bugs-address="yeniseirape@gmail.com" -s -k_ -L C src/int3.c \
-	src/Interfaz_2.c src/interfaz_login.c src/interfaz_search.c src/interfazX.c
+	--msgid-bugs-address="yeniseirape@gmail.com" -s -k_ -L C ${DIRSRC}/int3.c \
+	${DIRSRC}/Interfaz_2.c ${DIRSRC}/interfaz_login.c ${DIRSRC}/interfaz_search.c ${DIRSRC}/interfazX.c
 
 actualizar-archivos-po: gen-template-pot
 	msgmerge -s -U po/en.po po/Point-Store.pot
