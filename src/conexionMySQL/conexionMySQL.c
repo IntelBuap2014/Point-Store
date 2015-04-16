@@ -1,6 +1,7 @@
 /* librerías que usaremos */
 #include <mysql.h> /* libreria que nos permite hacer el uso de las conexiones y consultas con MySQL */
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -9,7 +10,7 @@ int main()
     MYSQL_ROW row; /* variable que contendra los campos por cada registro consultado */
     char *server = "localhost"; /*direccion del servidor 127.0.0.1, localhost*/
     char *user = "root"; /*usuario permitido acceder a la base de datos */
-    char *password = ""; /* contraseña para el usuario */
+    char *password = "adagio"; /* contraseña para el usuario */
     char *database = "Point-Store"; /*nombre de la base de datos a consultar */
     conexion = mysql_init(NULL); /*inicializacion a nula la conexión */
 
