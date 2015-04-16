@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Point-Store 0.1\n"
 "Report-Msgid-Bugs-To: yeniseirape@gmail.com\n"
-"POT-Creation-Date: 2015-04-15 00:44-0500\n"
+"POT-Creation-Date: 2015-04-15 23:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: source/interfaz_search.c:42
+#: src/interfaz_search.c:42
 msgid "Buscar"
 msgstr ""
 
-#: source/interfaz_search.c:57
+#: src/interfaz_search.c:57
 msgid "Buscar por Codigo"
 msgstr ""
 
-#: source/interfaz_search.c:73
+#: src/interfaz_search.c:73
 msgid "Buscar por Nombre"
 msgstr ""
 
-#: source/int3.c:89
+#: src/int3.c:89
 msgid "Cerrar"
 msgstr ""
 
-#: source/Interfaz_2.c:48
+#: src/Interfaz_2.c:48
 msgid "Clientes"
 msgstr ""
 
-#: source/interfazX.c:31
+#: src/interfazX.c:31
 msgid "Codigo"
 msgstr ""
 
-#: source/int3.c:71
+#: src/int3.c:71
 msgid "Codigo de Barras: "
 msgstr ""
 
-#: source/interfaz_login.c:73
+#: src/interfaz_login.c:73
 msgid "Contraseña"
 msgstr ""
 
-#: source/int3.c:70
+#: src/int3.c:70
 msgid "Descripcion del Producto: "
 msgstr ""
 
-#: source/Interfaz_2.c:40
+#: src/Interfaz_2.c:40
 msgid "Facturas"
 msgstr ""
 
-#: source/int3.c:62
+#: src/int3.c:62
 msgid "Información del producto"
 msgstr ""
 
-#: source/Interfaz_2.c:32
+#: src/Interfaz_2.c:32
 msgid "Inventario"
 msgstr ""
 
-#: source/int3.c:69
+#: src/int3.c:69
 msgid "Marca: "
 msgstr ""
 
-#: source/interfazX.c:32
+#: src/interfazX.c:32
 msgid "Nombre"
 msgstr ""
 
-#: source/int3.c:68
+#: src/int3.c:68
 msgid "Nombre: "
 msgstr ""
 
-#: source/int3.c:59
+#: src/int3.c:59
 msgid "Nuevo Producto"
 msgstr ""
 
-#: source/int3.c:88
+#: src/int3.c:88
 msgid "Registrar"
 msgstr ""
 
-#: source/interfaz_login.c:57
+#: src/interfaz_login.c:57
 msgid "Usuario"
 msgstr ""
 
-#: source/Interfaz_2.c:23
+#: src/Interfaz_2.c:23
 msgid "Ventana"
 msgstr ""
 
-#: source/Interfaz_2.c:56
+#: src/Interfaz_2.c:56
 msgid "Ventas"
 msgstr ""
 
-#: source/interfazX.c:25
+#: src/interfazX.c:25
 msgid "Verificar existencia"
 msgstr ""

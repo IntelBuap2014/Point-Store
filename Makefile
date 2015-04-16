@@ -30,8 +30,8 @@ interfazx: ${INTERFAZX}
 gen-template-pot:
 	xgettext --package-name Point-Store --package-version 0.1 --default-domain Point-Store \
 	--output po/Point-Store.pot --from-code=utf-8 --copyright-holder="Yenisei" \
-	--msgid-bugs-address="yeniseirape@gmail.com" -s -k_ -L C ${DIRSRC}/int3.c \
-	${DIRSRC}/Interfaz_2.c ${DIRSRC}/interfaz_login.c ${DIRSRC}/interfaz_search.c ${DIRSRC}/interfazX.c
+	--msgid-bugs-address="yeniseirape@gmail.com" -s -k_ -L C ${Int3} \
+	${INTERFAZ_2} ${LOGIN} ${BUSQUEDA} ${INTERFAZX}
 
 actualizar-archivos-po: gen-template-pot
 	msgmerge -s -U po/en.po po/Point-Store.pot
