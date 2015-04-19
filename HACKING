@@ -1,117 +1,118 @@
 ****************
-Luma Development
+Point Store Development
 ****************
 .. Contents
 .. ========
-.. 1. Getting Started
-.. 1.1. Libraries and tools
-.. 1.2. Development tools
-.. 2. Repository Structure
-.. 2.1. The luma folder
-.. 2.2. The resources folder
-.. 2.3. The tools folder
-.. 2.4. The doc folder
-.. 3. Development
-.. 3.1. Coding Style
-.. 3.1.1. Source code header
-.. 3.1.2. Source code footer
-.. 3.2. Plugin development
-.. 3.2.1. Available Luma plugins
-.. 3.2.2. A skeleton plugin
-.. 3.2.3. Settings support for plugins
-.. 4. Internationalization
-.. 4.1. Translating the application
-.. 4.2. Dynamic Translation of the application
-.. 5. Documentation
-.. 5.1. Source code documentation
-.. 5.2. User documentation
-.. 6. Deployment
-.. 7. The Luma Tool Chain
-.. 7.1. The Luma resource compiler
-.. 7.2. The Luma internationalization tool
-.. 7.3. The Luma predeployment tool
-.. 7.4. The Luma GPL header generator
-1. Getting Started
-==================
-This document is intended for Luma developers. For install instructions see the
-user documentation, either on the Luma website (http://luma.sf.net/) or see the
-INSTALL_ file in the source distribution.
+.. 1. Introducción
+.. 1.1. Librerías y herramientas
+.. 1.2. Herramientas de Desarrollo
+.. 2. Estructura del Repositorio
+.. 2.1. Carpeta Point-Store
+.. 2.2. Recursos de la carpeta
+.. 2.3. Herramientas de la carpeta
+.. 2.4. Carpeta doc
+.. 3. Desarrollo
+.. 3.1. Código de estilo
+.. 3.1.1. Cabecera del código fuente 
+.. 3.1.2. Pie del código fuente
+.. 4. Internationalización
+.. 4.1. Traducción de la aplicación
+.. 4.2. Traducción dinámica de la aplicación 
+.. 5. Documentación
+.. 5.1. Documentación del código fuente
+.. 5.2. Documentación del usuario
+.. 6. Desarrollo
+.. 7. Herramienta Point Store 
+.. 7.1. Compilador de Point Store
+.. 7.2. Herramienta de Internacionalización de Point Store
+.. 7.3. Herramienta de Predesarrolo de Point Store
+.. 7.4. Generador de cabeceras GPL 
+=========================================================================================
+1. Introducción
+=========================================================================================
+Este documento esta dirigido a los desarrolladores de Point Store. 
+Para instalar ver las instrucciones encontradas en Documentación del usuario
+o bien en el archivo INSTALL.
+
 .. _INSTALL: ./INSTALL.html
-1.1. Libraries and tools
-------------------------
-In order to start *hacking* on the Luma source, you will need to install a few
-libraries and tools that Luma depends upon. The following python libraries is
-required for Luma development:
-- python_ >= 2.6 < 3
-- python-ldap_ >= 2.3
-- PyQt4_ >= 4.8
-When you have these dependencies installed, you can proceed to get your hand on
-the Luma sourcecode. git_ is used to as the revision control system for Luma,
-and in order to get your hand on the source code, you will need to install it.
-Git is available for both *Linux*, *Mac OSX* and *Windows*, and can be
-downloaded from http://git-scm.com.
-The Luma git_ repository is hosted on sourceforge_. To clone and create your own
-branch you can run the following commands in your favorite shell::
-$ git clone http://luma.sf.net/repo/luma.git luma-devel
-$ cd luma-devel
+
+----------------------------------------------------------------------------------------
+1.1. Herramientas y librerías 
+----------------------------------------------------------------------------------------
+Para instalar Point Store ud necesita instalar  las siguiente librerías en el orden
+indicado y con las versiones señaladas
+- gtk >= 3
+- glib ????
+- mysql-server >=5.5
+- libmysqlclient-dev >=5.5.41
+
+
+Cuando ud. tiene esas dependencias instaladas, ud puede proceder a obtener el codigo
+de Point Store. Este proyecto usa git para el control de versiones del sistema Point 
+Store. Git esta disponble para Linux, Mac OSX, y Windows y puede ser descargado en 
+http://git-scm.com.
+Point Store esta alojado en  sourceforge_.  Y puede clonar y crear tu propio branch
+ejecutando los siguientes comando en su shell favorito::
+$ git clone https://github.com/IntelBuap2014/Point-Store.git
+$ cd Point-Store
 $ git fetch
-$ git checkout -b my-luma-feature develop
+
+$ git checkout -b my-luma-feature develop   ????????
 .. _python: http://www.python.org/
 .. _python-ldap: http://python-ldap.org/
 .. _PyQt4: http://www.riverbankcomputing.com/software/pyqt/download
 .. _git: http://git-scm.com/
 .. _sourceforge: http://sourceforge.net/
+
+----------------------------------------------------------------------------------------
 1.2. Development tools
-----------------------
-There exists a number of tools that can be helpful when developing python and
-PyQt4 code. We also have produced some tools spesific for the Luma development
-and deployment process `7. The Luma Tool Chain`_.
-- `Qt4 Designer`_:
-This application is part of the Qt framework, which is helpful for creating
-Qt graphical interfaces. You can create the GUI design and use the PyQt4 tool
-``pyuic4`` to generate python source code from it.
-- `Qt4 Linguist`_:
-This application is part of the Qt framework, and is used for the
-internationalization process for the application.
-If you plan on contributing documentation to the application you will need the
-following tools:
-- reStructuredText_:
-This is the markup language we use to write the user doumentation. You should
-also write your source code doc strings in this syntax. A number of programs
-is included in this tool, that enable us to generate teh documentation in
-various formats. One of these are the ``rst2man`` program, by which the
-*nroff* manual page is generated.
-- Sphinx_:
-*Sphinx*, the Python documentation generator, is used to produce the html
-documentation for the application. It is used together with reStructuredText.
-.. _Qt4 Designer: http://doc.trolltech.com/4.7/designer-manual.html
-.. _Qt4 Linguist: http://doc.trolltech.com/4.7/linguist-manual.html
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
-.. _Sphinx: http://sphinx.pocoo.org/
-2. Repository structure
-=======================
-The first thing you should do after all libraries and tools are installed, is to
-get familiar with the structure of the repository:
-::
+----------------------------------------------------------------------------------------
+
+Point Store es desarrollada bajo el lenguaje C con un modelo Vista Controlador, 
+usando el conector mysql , y en el soporte de graficos  la librería GTK
+
+=========================================================================================
+2. Estructura del Repositorio
+=========================================================================================
+La estructura del repositorio es la siguiente:
 .
-|-- bin
-|-- contrib
-|-- data
-|-- doc
-|-- luma
-| |-- base
-| | |-- backend
-| | |-- gui
-| | |-- model
-| | `-- util
-| |-- plugins
-| `-- test
-|-- resources
-| |-- forms
-| |-- i18n
-| `-- icons
-|-- setup
-`-- tools
+|-- AUTHORS
+|-- CHANGELOG 
+|-- COPYING
+|-- HACKING
+|-- INSTALL
+|-- MANTEINERS
+|-- Makefile
+|-- NEWS
+|-- README.md
+|-- THANKS
+|-- TODO
+|-- Version
+|-- src
+| |-- interfaz_2.c 
+| |-- interfaz_2.c  ??
+| |-- interfaz_2.c  ??
+| |-- interfaz_2.c  ??
+| |-- interfaz_2.c  ??
+| |-- interfaz_2.c  ??
+| |-- interfaz_2.c  ??
+| |-- Cliente_Servidor
+| | | --Makefile
+| | | --cliente.c
+| | | --servidor.c
+| |-- conexionmySQL
+| | | --conexionMySQL.c
+| | | --Makefile
+|-- po
+| |-- Leeme.txt
+| |-- Point-Store.pot
+| |-- en.po
+|-- idioma
+| |-- en
+| | | -- LC_MESSAGES	
+| | | |-- Point-Store.mo	
+
+???????????????????????????????????????????????????????????????????????????????????????
 2.1. The luma folder
 --------------------
 The *Luma source code files* is located in the ``luma`` folder. This is where
