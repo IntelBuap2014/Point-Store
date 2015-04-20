@@ -4,21 +4,27 @@
  
 typedef struct Usuario
 {
-   char  nombre[45];
+  char  nombre[45];
    char  password[20];
    int   usuario_id;
 } Usuario ;
 
 typedef Usuario *ptrUsuario;
 
+ptrUsuario constructZ(char nombre[], char password [] )
+{
+         ptrUsuario u = (struct Usuario *) malloc (sizeof(struct Usuario));
+         strcpy(u->nombre, nombre);
+         strcpy( u->password,password);
+         return u;
+}
+  
 ptrUsuario  construct(int usuario_id, char nombre[], char password [] )
 {
 	 ptrUsuario u = (struct Usuario *) malloc (sizeof(struct Usuario));
- 	 
 	 u->usuario_id=usuario_id;
  	 strcpy(u->nombre, nombre);
  	 strcpy( u->password,password);	
-
      	 return u;
 }
 
