@@ -96,6 +96,7 @@ La estructura del repositorio es la siguiente:
 | |-- interfaz_2.c  ??
 | |-- interfaz_2.c  ??
 | |-- interfaz_2.c  ??
+i
 | |-- Cliente_Servidor
 | | | --Makefile
 | | | --cliente.c
@@ -112,102 +113,67 @@ La estructura del repositorio es la siguiente:
 | | | -- LC_MESSAGES	
 | | | |-- Point-Store.mo	
 
-???????????????????????????????????????????????????????????????????????????????????????
-2.1. The luma folder
---------------------
-The *Luma source code files* is located in the ``luma`` folder. This is where
-you should put all your Luma python modules. In the ``luma`` folder you will
-find the following python packages:
-- ``base``:
-Contains modules for the base application, and is divided into:
-* ``base.backend``:
-Contains all modules that handles the underlaying functionality is located
-here. As a rule off thumb *you should not place any python code with gui
-dependencies in this package*.
-* ``base.gui``:
-Contains all the GUI related modules, including the MainWindow and all the
-Dialogs used by the main aplication.
-* ``base.util``:
-Contains all utility modules, that both the main application and plugins
-can make use off.
-- ``plugins``:
-All the plugins that is shipped with the base Luma application is located in
-their own subfolder here.
-- ``test``:
-All test code is located here. If (when) you write your own unit-tests you
-should put them in this location. Python modules in this folder is not
-included when deploying Luma.
-2.2. The resources folder
--------------------------
-The *Luma resource files* is located in the ``resources`` folder. This folder is
-divided into several sub-folders:
-- ``forms``:
-Contains all the *UI* files created with the *Qt Designer* tool. All UI files
-should be placed here with a ``*Design.ui`` extension. Note that we mark these
-files with the *Design* suffix in order to easily distinguish them when python
-code is generated from them. Note also that *UI* files for plugins should be
-placed in its own subfolder under the ``plugins`` subfolder.
-- ``i18n``:
-Contains all the translation files. When new translation files is created,
-they should be placed here, with a valid 2 char suffix, following the
-*ISO 638-1 standard* [1]_ and a ``.ts`` extension. Luma makes use of the Qt
-internazionallization system, and is translated with the Qt Linguist tool.
-Note that both the translation source files ``.ts`` and the release files
-``.qm`` should be placed in the same folder.
-- ``icons``:
-Contains all the icons that is used by the application. The folder structure
-and icon naming should follow the icon-theme_ and icon-naming_ recommendations
-provided by the freedesktop.org_ project.
-.. _icon-theme: http://www.freedesktop.org/wiki/Specifications/icon-theme-spec
-.. _icon-naming: http://www.freedesktop.org/wiki/Specifications/icon-naming-spec
-.. _freedesktop.org: http://www.freedesktop.org/wiki/
-2.3. The tools folder
+
+----------------------------------------------------------------------------------------
+2.1. La carpeta Point Store
+----------------------------------------------------------------------------------------
+
+El código de Point Store esta localizado en la carpeta "Point Store". Este es el lugar
+donde tu podras poner todos los modulos C de Point Store.
+
+*** Esta parte creo qu tendriamos que organizar los aacrhivos  uno -> backend, gui, *plugins
+* pruebas, utilerias .
+
+
+2.2. La carpeta de recursos
+----------------------------------------------------------------
+Los archivos que son recusros de  Point Store deberíasmo considerar
+formularios
+i18n -> traducción
+iconos
+
+
+2.3.  Las herramientas de la carpta
 ---------------------
-The *Luma tool chain* is located in the ``tools`` folder. Here you find a number
-of utility scripts that automates much of the postprocessing of resources for
-the applications. See the section `7. The Luma Tool Chain`_ for a more detailed
-description of what you find here.
-2.4. The doc folder
--------------------
-The Luma *User documentation files* is located in the ``doc`` folder. For
-information on how to contribute user documentation for Luma, please refer to
-the `5.2. User documentation`_ section in this document.
-3. Development
-==============
-3.1. Coding Style
------------------
-You should follow PEP8_ when writing Python source code for Luma. You should
-especially try to use:
-- 4 spaces for indentation
-- CamelCase for methods name
-- a maximum of 79 characters per line for code
-- a miximum of 72 characters per line for docstrings
-- one newline between class methods.
-- two newlines between module methods.
-- double underscore for *private* attributes and methods.
-- python properties for getters and setter
-- import statements as described in PEP328_
-The *Coding Style* guidelines is **only guidelines**, meaning that the first
-(and main) priority is allways to write **well documented** and **readable
-code**. If these guidelines renders your implementation *less readable* or
-*less understandable*, you are free to (and should) bypass the affected
-guideline, and perhaps consider proposing modifications to the *Coding Style*
-guidelines.
-.. _PEP8: http://www.python.org/dev/peps/pep-0008/
-.. _PEP328: http://www.python.org/dev/peps/pep-0328/
-3.1.1 Source code header
-........................
-When writing python modules for the Luma base application, you should include a
-header comment that describes the name of the contributors and the license for
-the module. The contributors should be grouped by year. If you modify an
-existing module you can add your name and email to the contributor list (if you
-feel you deserve it :) ).
-Remember that the base Luma application is released under the *GNU General
-Public License version 2* or newer. When you contribute new modules you should
-also make them available under the same license. If you have some issues, i.e.
-uses code that is made available under another license, you should consult the
-Luma development theme. A list of GPL compatible licenses is available at:
-http://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses.
+
+El desarrollo de la herramienta Point Store deberia estar en la carpeta "tools"
+Aqui debera estar un numero de scripts y utilidades para el post procesamiento
+de recusrso de las aplicación.
+--------------------------------------------------------------------------------------
+2.4. La carpeta de documentación
+---------------------------------------------------------------------------------------
+Los archivos de documetnación de Point Store esta localizados en carpeta doc
+
+======================================================================================.
+3. Desarrollo
+======================================================================================
+
+En la siguiente sección se escribe a cerca d las reglas para el desarrollo usado en
+Point Store y el cual se usara para futuras versiones.
+
+--------------------------------------------------------------------------------------
+3.1. Codigo de Estilo 
+--------------------------------------------------------------------------------------
+Uso de sangrías en la escritura de bloques
+Uso de mayúsculas en en la definicion de constantes 
+
+
+**Escribir mas del codigo de estilo
+
+......................................................................................
+3.1.1 Código fuente de las cabeceras
+......................................................................................
+Cuano se escribieron los modulos de Point Store bajo el lenguaje C, se incluyen
+comentarios en las cabeceras que describen el nombre de quienes contribuyeron y la licencia del 
+modulo. 
+Las personas que contribuyen deberan ser agrupadas por año  y
+Si tu modificas un modulo existente deberas agregar tu nombre y correo en la lista de personas
+q contribuyen 
+
+Hablar acera de la licencia con la cual se libera el proyecto, para nuevos branch
+ Colocar aqui un template de codigo fuente .. con la llicencia **
+
+
 Belov is the default source code header used for the python modules in the base
 Luma application::
 # -*- coding: utf-8 -*-
@@ -229,17 +195,21 @@ Luma application::
 #
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see http://www.gnu.org/licenses/
-3.1.2. Source Code Footer
+
+3.1.2. Pie de página del Código Fuente 
 .........................
-Because a lot of the Luma developers is using the brilliant vim_ text editor,
-you should also include the following entry at the end of your python modules::
+
+Debido a que la mayoría de lo desarrolladores de Point Store usan el editor vim
+Tu podras incluir la siguiente entrada al final de tus modulos C:
 # vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4
-This way we can eliminate some possible issues regarding mixing of tabs and
-spaces.
+Esta en la forma de eliminar algunos posibles aspectos 
+regarding '  mezclar los tabs y los espacios 
 .. _vim: http://vim.org/
-3.2. Plugin development
+
+
+Borrar todoesto R
 -----------------------
-Luma support plugins written in python and PyQt4, and most of the functionality
+
 that Luma provides, comes through independent plugins. Most notably is the
 *Browser* plugin that enables the user to browse an LDAP enabled server much
 like a regular file browser.
@@ -251,6 +221,9 @@ functionality on all supported platforms (*Linux*, *Windows* and *Mac OSX*).
 - It *must* be available under the *GNU General Public License version 2* or
 newer, or another GPL compatible license [2]_.
 - It *should* provide usefull LDAP related functionality.
+Borrar 
+
+............................................................................
 3.2.1. Available Luma plugins
 -----------------------------
 The currently available plugins that is included in Luma is:
